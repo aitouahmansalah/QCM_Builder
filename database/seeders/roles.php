@@ -15,5 +15,20 @@ class roles extends Seeder
     {
         Role::create(['name' => 'admin']);
         Role::create(['name' => 'user']);
+
+         DB::table('users')->insert([
+            'name' => 'Professor',
+            'email' => 'professor@example.com',
+            'password' => Hash::make('password1'),
+            'role' => 'admin',
+        ]);
+
+        
+        DB::table('users')->insert([
+            'name' => 'Student',
+            'email' => 'student@example.com',
+            'password' => Hash::make('password2'),
+            'role' => 'user',
+        ]);
     }
 }
